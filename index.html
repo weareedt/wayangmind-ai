@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demographic Items Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Sets the default font for the entire page */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom style for form element focus rings for better accessibility.
+          This provides a clear blue outline when a user navigates the form
+          using a keyboard or clicks on a form element.
+        */
+        input[type="radio"]:focus,
+        input[type="checkbox"]:focus,
+        select:focus,
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+    <div class="w-full max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center">WayangMind AI Registration</h1>
+
+        <form action="#" method="POST" class="space-y-8">
+            <!-- Name and Age -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                    <input type="text" name="name" id="name"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Enter your full name">
+                </div>
+                <div>
+                    <label for="age" class="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                    <input type="number" name="age" id="age"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Enter your age">
+                </div>
+            </div>
+
+            <!-- Gender -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+                <div class="flex items-center space-x-6">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="gender" value="male"
+                            class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <span class="text-gray-700">Male</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="gender" value="female"
+                            class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <span class="text-gray-700">Female</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Nationality -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Nationality</label>
+                <div class="flex items-center space-x-6">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="nationality" value="malaysian"
+                            class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <span class="text-gray-700">Malaysian</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="nationality" value="non-malaysian"
+                            class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <span class="text-gray-700">Non Malaysian</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Ethnicity -->
+            <div>
+                <label for="ethnicity" class="block text-sm font-medium text-gray-700 mb-2">Ethnicity</label>
+                <select id="ethnicity" name="ethnicity"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">Please select</option>
+                    <option value="malay">Malay</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="indian">Indian</option>
+                    <option value="bumiputera_sabah">Bumiputera Sabah</option>
+                    <option value="bumiputera_sarawak">Bumiputera Sarawak</option>
+                    <option value="others">Others</option>
+                </select>
+                <textarea name="ethnicity_other_details" id="ethnicity_other_details" rows="3"
+                    class="hidden w-full mt-3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Please specify"></textarea>
+            </div>
+
+            <!-- Religion -->
+            <div>
+                <label for="religion" class="block text-sm font-medium text-gray-700 mb-2">Religion</label>
+                <select id="religion" name="religion"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">Please select</option>
+                    <option value="islam">Islam</option>
+                    <option value="christian">Christian</option>
+                    <option value="buddha">Buddha</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="others">Others</option>
+                </select>
+                <textarea name="religion_other_details" id="religion_other_details" rows="3"
+                    class="hidden w-full mt-3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Please specify"></textarea>
+            </div>
+
+            <!-- Preferred Language -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Language (select all that
+                    apply)</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" name="language[]" value="malay"
+                            class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <span class="text-gray-700">Malay</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" name="language[]" value="english"
+                            class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <span class="text-gray-700">English</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" name="language[]" value="mandarin"
+                            class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <span class="text-gray-700">Mandarin</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" name="language[]" value="tamil"
+                            class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <span class="text-gray-700">Tamil</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Highest Level of Education -->
+            <div>
+                <label for="education" class="block text-sm font-medium text-gray-700 mb-2">Highest Level of
+                    Education</label>
+                <select id="education" name="education"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">Please select</option>
+                    <option value="primary">Primary School</option>
+                    <option value="secondary">Secondary School</option>
+                    <option value="vocational">Vocational/Technical School</option>
+                    <option value="diploma">Diploma Certificate</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="doctoral">Doctoral Degree</option>
+                    <option value="others">Others</option>
+                </select>
+                <textarea name="education_other_details" id="education_other_details" rows="3"
+                    class="hidden w-full mt-3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Please specify"></textarea>
+            </div>
+
+            <!-- Working Status -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Are you currently working?</label>
+                <div class="flex items-center space-x-6">
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="working" value="yes"
+                            class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <span class="text-gray-700">Yes</span>
+                    </label>
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="radio" name="working" value="no"
+                            class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                        <span class="text-gray-700">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Conditional Fields -->
+            <div class="space-y-6">
+                <!-- Mental Illness -->
+                <div id="mental_illness_section">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Have you ever been diagnosed with mental
+                        illness?</label>
+                    <div class="flex items-center space-x-6">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="mental_illness" value="yes"
+                                class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="text-gray-700">Yes</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="mental_illness" value="no"
+                                class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="text-gray-700">No</span>
+                        </label>
+                    </div>
+                    <textarea name="mental_illness_details" id="mental_illness_details" rows="3"
+                        class="hidden w-full mt-3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Please State"></textarea>
+                </div>
+
+                <!-- Family Mental Illness -->
+                <div id="family_mental_illness_section">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Does your family member/first degree
+                        relative have mental illness?</label>
+                    <div class="flex items-center space-x-6">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="family_mental_illness" value="yes"
+                                class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="text-gray-700">Yes</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="family_mental_illness" value="no"
+                                class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="text-gray-700">No</span>
+                        </label>
+                    </div>
+                    <textarea name="family_mental_illness_details" id="family_mental_illness_details" rows="3"
+                        class="hidden w-full mt-3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Please State"></textarea>
+                </div>
+
+                <!-- Physical Illness -->
+                <div id="physical_illness_section">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Do you have any physical
+                        illness?</label>
+                    <div class="flex items-center space-x-6">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="physical_illness" value="yes"
+                                class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="text-gray-700">Yes</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="physical_illness" value="no"
+                                class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="text-gray-700">No</span>
+                        </label>
+                    </div>
+                    <textarea name="physical_illness_details" id="physical_illness_details" rows="3"
+                        class="hidden w-full mt-3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Please State"></textarea>
+                </div>
+
+                <!-- Non-communicable Disease -->
+                <div id="ncd_section">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Do you have any non-communicable
+                        disease?</label>
+                    <div class="flex items-center space-x-6">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="ncd" value="yes"
+                                class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="text-gray-700">Yes</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="ncd" value="no"
+                                class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="text-gray-700">No</span>
+                        </label>
+                    </div>
+                    <textarea name="ncd_details" id="ncd_details" rows="3"
+                        class="hidden w-full mt-3 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Please State"></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-6 text-right">
+                <button type="submit"
+                    class="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Registration Dialog -->
+    <div id="registrationDialog"
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50 hidden">
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-sm w-full text-center">
+            <h2 id="dialogTitle" class="text-xl font-bold mb-4"></h2>
+            <p id="dialogMessage" class="mb-6"></p>
+            <button id="dialogCloseBtn"
+                class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // This script handles the logic for showing/hiding conditional text fields.
+
+        // Shows/hides a text area based on a 'yes'/'no' radio button selection.
+        function setupConditionalRadioField(radioGroupName, detailsInputId) {
+            const radios = document.querySelectorAll(`input[type="radio"][name="${radioGroupName}"]`);
+            const detailsInput = document.getElementById(detailsInputId);
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', (event) => {
+                    if (event.target.value === 'yes') {
+                        detailsInput.classList.remove('hidden');
+                        detailsInput.required = true;
+                    } else {
+                        detailsInput.classList.add('hidden');
+                        detailsInput.required = false;
+                        detailsInput.value = '';
+                    }
+                });
+            });
+        }
+
+        // Shows/hides a text area based on an 'others' selection in a dropdown.
+        function setupConditionalSelectField(selectId, detailsInputId) {
+            const selectElement = document.getElementById(selectId);
+            const detailsInput = document.getElementById(detailsInputId);
+
+            selectElement.addEventListener('change', (event) => {
+                if (event.target.value === 'others') {
+                    detailsInput.classList.remove('hidden');
+                    detailsInput.required = true;
+                } else {
+                    detailsInput.classList.add('hidden');
+                    detailsInput.required = false;
+                    detailsInput.value = '';
+                }
+            });
+        }
+
+        // Initialize all conditional fields when the document is loaded.
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup for radio button conditional fields
+            setupConditionalRadioField('mental_illness', 'mental_illness_details');
+            setupConditionalRadioField('family_mental_illness', 'family_mental_illness_details');
+            setupConditionalRadioField('physical_illness', 'physical_illness_details');
+            setupConditionalRadioField('ncd', 'ncd_details');
+
+            // Setup for select dropdown conditional fields
+            setupConditionalSelectField('ethnicity', 'ethnicity_other_details');
+            setupConditionalSelectField('religion', 'religion_other_details');
+            setupConditionalSelectField('education', 'education_other_details');
+        });
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCRjNip7BbsXrb_-wnkNpZ8dzWB6VcV9q4",
+            authDomain: "wayangmind-vr.firebaseapp.com",
+            databaseURL: "https://wayangmind-vr-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "wayangmind-vr",
+            storageBucket: "wayangmind-vr.firebasestorage.app",
+            messagingSenderId: "1008615268268",
+            appId: "1:1008615268268:web:3a6b923bd74ab5abca6409",
+            measurementId: "G-EDFR9XVXRD"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        function getFormData(form) {
+            const data = {};
+            const formData = new FormData(form);
+            for (const [key, value] of formData.entries()) {
+                if (key.endsWith('[]')) {
+                    const realKey = key.slice(0, -2);
+                    if (!data[realKey]) data[realKey] = [];
+                    data[realKey].push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+            return data;
+        }
+
+        function showDialog(title, message) {
+            const dialog = document.getElementById('registrationDialog');
+            document.getElementById('dialogTitle').textContent = title;
+            document.getElementById('dialogMessage').innerHTML = message;
+            dialog.classList.remove('hidden');
+            document.getElementById('dialogCloseBtn').onclick = () => {
+                dialog.classList.add('hidden');
+            };
+        }
+
+        // Generate a random 4-digit code as a string
+        function generateCode() {
+            return Math.floor(1000 + Math.random() * 9000).toString();
+        }
+
+        // Ensure the code is unique in the database (try up to 10 times)
+        async function getUniqueCode() {
+            let code, snapshot, attempts = 0;
+            do {
+                code = generateCode();
+                snapshot = await get(child(ref(db), 'registrations/' + code));
+                attempts++;
+                if (attempts > 10) throw new Error('Unable to generate unique code. Please try again.');
+            } while (snapshot.exists());
+            return code;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = getFormData(form);
+                const userName = data.name || "Participant";
+
+                try {
+                    const code = await getUniqueCode();
+                    data.code = code;
+                    await set(ref(db, 'registrations/' + code), data);
+                    form.reset();
+                    document.querySelectorAll('textarea').forEach(t => t.classList.add('hidden'));
+                    showDialog(
+                        "Registration Successful",
+                        `<span class="font-semibold">Thank you, ${userName}!</span><br>Your unique code is <span class="font-mono text-blue-600 text-lg">${code}</span>.`
+                    );
+                } catch (error) {
+                    showDialog(
+                        "Registration Failed",
+                        error.message.includes('unique code')
+                            ? "A unique code could not be generated. Please try submitting the form again."
+                            : "Error submitting registration: " + error.message
+
+
+                        //test
+                    );
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
